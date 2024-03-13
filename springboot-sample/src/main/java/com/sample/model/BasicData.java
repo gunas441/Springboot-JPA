@@ -1,55 +1,65 @@
 package com.sample.model;
 
-import java.sql.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="employees")
+@Table(name="basicdata")
 public class BasicData 
 {
 	@Id
-	@Column(name="id")
-	private Integer id;
-	@Column(name="emp_name")
-	private String empName;
-	@Column(name="dob")
-	private Date dob;
-	@Column(name="phone")
-	private String mobile;
-	@Column(name="department")
-	private Integer departmentId;
+	@Column(name="USERID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer userId;
+	@Column(name="FULLNAME")
+	private String fullName;
+	@Column(name="GENDER")
+	private boolean gender;
+	@Column(name="EMAIL")
+	private String email;
+	@Column(name="MOBILE")
+	private Long mobile;
+	@Column(name="SALARY")
+	private int salary;
 	
-	public Integer getId() {
-		return id;
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
-	public String getEmpName() {
-		return empName;
+	public String getFullName() {
+		return fullName;
 	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
-	public Date getDob() {
-		return dob;
+	public boolean isGender() {
+		return gender;
 	}
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setGender(boolean gender) {
+		this.gender = gender;
 	}
-	public String getMobile() {
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Long getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
-	public Integer getDepartmentId() {
-		return departmentId;
+	public int getSalary() {
+		return salary;
 	}
-	public void setDepartmentId(Integer departmentId) {
-		this.departmentId = departmentId;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 }

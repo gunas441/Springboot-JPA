@@ -5,7 +5,6 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.sample.model.BasicData;
 import com.sample.repository.BasicdataRepository;
 
@@ -22,5 +21,10 @@ public class BasicdataDaoImpl implements BasicdataDao
 	@Override
 	public List<BasicData> findAll() {
 		return basicdataRepository.findAll();
+	}
+
+	@Override
+	public BasicData save(BasicData data) {
+		return basicdataRepository.save(data);
 	}
 }
